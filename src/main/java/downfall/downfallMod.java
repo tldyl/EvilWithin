@@ -64,10 +64,7 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.relics.GoldenIdol;
-import com.megacrit.cardcrawl.relics.NeowsLament;
-import com.megacrit.cardcrawl.relics.VelvetChoker;
+import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -93,7 +90,9 @@ import expansioncontent.expansionContentMod;
 import expansioncontent.patches.CenterGridCardSelectScreen;
 import guardian.GuardianMod;
 import guardian.cards.ExploitGems;
+import guardian.patches.AbstractCardEnum;
 import guardian.relics.PickAxe;
+import guardian.relics.SackOfGems;
 import slimebound.SlimeboundMod;
 import sneckomod.SneckoMod;
 import sneckomod.cards.unknowns.*;
@@ -602,7 +601,7 @@ public class downfallMod implements
                 //Event ID to Override//
                 .overrideEvent(WeMeetAgain.ID)
                 //Event Type//
-                .bonusCondition(() -> (AbstractDungeon.player.relics.size() > 2))
+                .bonusCondition(() -> enoughRelicsForRanwid())
 
                 .eventType(EventUtils.EventType.FULL_REPLACE)
                 .create());
@@ -921,6 +920,21 @@ public class downfallMod implements
 
     }
 
+    public boolean enoughRelicsForRanwid(){
+        int count = 0;
+
+        for (AbstractRelic r : AbstractDungeon.player.relics) {
+            if (r.tier == AbstractRelic.RelicTier.COMMON) {
+                count++;
+            }
+            if (r.tier == AbstractRelic.RelicTier.UNCOMMON) {
+                count++;
+            }
+        }
+        return (count >= 2);
+    }
+
+
     @Override
     public void receiveEditRelics() {
         BaseMod.addRelic(new ShatteredFragment(), RelicType.SHARED);
@@ -937,6 +951,8 @@ public class downfallMod implements
         BaseMod.addRelic(new TeleportStone(), RelicType.SHARED);
         BaseMod.addRelic(new HeartsMalice(), RelicType.SHARED);
         BaseMod.addRelic(new NeowBlessing(), RelicType.SHARED);
+        BaseMod.addRelic(new Hecktoplasm(), RelicType.SHARED);
+
     }
 
     @Override

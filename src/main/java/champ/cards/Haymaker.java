@@ -23,12 +23,12 @@ public class Haymaker extends AbstractChampCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (upgraded) techique();
+        //if (upgraded) techique();
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
+        applyToEnemy(m, autoWeak(m, 2));
         if (gcombo()) {
             applyToEnemy(m, autoVuln(m, 2));
         }
-        applyToEnemy(m, autoWeak(m, 2));
     }
 
     @Override
@@ -37,9 +37,6 @@ public class Haymaker extends AbstractChampCard {
     }
 
     public void upp() {
-
-        tags.add(ChampMod.TECHNIQUE);
-        rawDescription = UPGRADE_DESCRIPTION;
-        initializeDescription();
+        upgradeDamage(4);
     }
 }

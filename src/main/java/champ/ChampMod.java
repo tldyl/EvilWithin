@@ -6,6 +6,7 @@ import basemod.eventUtil.AddEventParams;
 import basemod.eventUtil.EventUtils;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
+import champ.actions.FatigueHpLossAction;
 import champ.cards.*;
 import champ.events.*;
 import champ.monsters.BlackKnight;
@@ -14,6 +15,7 @@ import champ.potions.OpenerPotion;
 import champ.potions.TechPotion;
 import champ.potions.UltimateStancePotion;
 import champ.powers.CounterPower;
+import champ.powers.ResolvePower;
 import champ.relics.*;
 import champ.stances.AbstractChampStance;
 import champ.util.CardFilter;
@@ -71,7 +73,8 @@ public class ChampMod implements
         OnCardUseSubscriber,
         PreMonsterTurnSubscriber,
         OnPlayerLoseBlockSubscriber,
-        PostUpdateSubscriber {
+        PostUpdateSubscriber
+{
     public static final String SHOULDER1 = "champResources/images/char/mainChar/shoulder.png";
     public static final String SHOULDER2 = "champResources/images/char/mainChar/shoulderR.png";
     public static final String CORPSE = "champResources/images/char/mainChar/corpse.png";
@@ -120,6 +123,10 @@ public class ChampMod implements
     private CustomUnlockBundle unlocks2;
     private CustomUnlockBundle unlocks3;
     private CustomUnlockBundle unlocks4;
+
+    public static boolean enteredDefensiveThisTurn;
+    public static boolean enteredBerserkerThisTurn;
+    public static boolean enteredGladiatorThisTurn;
 
     public static final TextureAtlas UIAtlas = new TextureAtlas();
     public static Texture heartOrb;
@@ -285,6 +292,9 @@ public class ChampMod implements
         finishersThisCombat = 0;
         techniquesThisTurn = 0;
         StanceHelper.init();
+        enteredBerserkerThisTurn = false;
+        enteredDefensiveThisTurn = false;
+        enteredGladiatorThisTurn = false;
     }
 
     @Override
@@ -434,6 +444,9 @@ public class ChampMod implements
     public boolean receivePreMonsterTurn(AbstractMonster abstractMonster) {
         finishersThisTurn = 0;
         techniquesThisTurn = 0;
+        enteredBerserkerThisTurn = false;
+        enteredDefensiveThisTurn = false;
+        enteredGladiatorThisTurn = false;
         return true;
     }
 
@@ -494,5 +507,32 @@ public class ChampMod implements
         for (AbstractCard c: AbstractDungeon.player.limbo.group){
             if (c.hasTag(TECHNIQUE)) c.initializeDescription();
         }
+    }
+
+    public static int fatigue(int begone) {
+
+        int y = AbstractDungeon.player.currentHealth;
+        AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
+            @Override
+            public void update() {
+                isDone = true;
+                int x = Math.min(begone, AbstractDungeon.player.currentHealth - 1);
+                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ResolvePower(x), x));
+                AbstractDungeon.actionManager.addToTop(new FatigueHpLossAction(AbstractDungeon.player, AbstractDungeon.player, x));
+            }
+        });
+
+        /*atb(new AbstractGameAction() {
+            @Override
+            public void update() {
+                isDone = true;
+                if (y - AbstractDungeon.player.currentHealth > 0) {
+                    att(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ResolvePower(y - AbstractDungeon.player.currentHealth), y - AbstractDungeon.player.currentHealth));
+                }
+            }
+        });
+        */ //This unused method makes it so the player only gains Resolve equal to lost HP. Fixes some breakable things, but also unfun.
+
+        return Math.min(begone, AbstractDungeon.player.currentHealth - 1);
     }
 }
