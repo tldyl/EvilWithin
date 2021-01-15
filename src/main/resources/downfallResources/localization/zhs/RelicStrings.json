@@ -478,6 +478,13 @@
       "这个遗物的效果已经耗尽。"
     ]
   },
+  "downfall:Hecktoplasm": {
+    "NAME": "灵体外质",
+    "FLAVOR": "这一团黏液似乎随着数百个灵魂的能量跳动。难怪没人想要。",
+    "DESCRIPTIONS": [
+      "你无法再获得 #y灵魂 。 打碎钥匙不需要再花费 #y灵魂 。 在每回合的开始获得 [E] 。"
+    ]
+  },
   "downfall:replacements": {
     "NAME": "",
     "FLAVOR": "",
