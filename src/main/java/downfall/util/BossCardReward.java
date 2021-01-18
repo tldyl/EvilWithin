@@ -1,5 +1,7 @@
 package downfall.util;
 
+import automaton.AutomatonChar;
+import champ.ChampChar;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -80,10 +82,12 @@ public class BossCardReward extends RewardItem {
     public static AbstractCard getRandomSeal() {
         ArrayList<AbstractCard> list = new ArrayList<>();// 1201
         for (AbstractCard c : CardLibrary.getAllCards()) {
-            if (c.hasTag(expansionContentMod.STUDY)){
+            if (c.rarity != AbstractCard.CardRarity.SPECIAL && c.hasTag(expansionContentMod.STUDY)){
                 if (!(c.hasTag(expansionContentMod.STUDY_HEXAGHOST) && AbstractDungeon.player instanceof TheHexaghost))
                     if (!(c.hasTag(expansionContentMod.STUDY_GUARDIAN) && AbstractDungeon.player instanceof GuardianCharacter))
                         if (!(c.hasTag(expansionContentMod.STUDY_SLIMEBOSS) && AbstractDungeon.player instanceof SlimeboundCharacter))
+                            if (!(c.hasTag(expansionContentMod.STUDY_CHAMP) && AbstractDungeon.player instanceof ChampChar))
+                                if (!(c.hasTag(expansionContentMod.STUDY_AUTOMATON) && AbstractDungeon.player instanceof AutomatonChar))
                 list.add(c);
             }
 

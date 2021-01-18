@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import downfall.downfallMod;
-import theHexaghost.util.TextureLoader;
+import downfall.util.TextureLoader;
 
 public class PoisonProtectionPower extends AbstractPower implements CloneablePowerInterface {
 
@@ -41,9 +41,6 @@ public class PoisonProtectionPower extends AbstractPower implements CloneablePow
         this.description = DESCRIPTIONS[0];
     }
 
-    @Override
-    public void stackPower(int stackAmount) {
-    }
 
     @Override
     public AbstractPower makeCopy() {

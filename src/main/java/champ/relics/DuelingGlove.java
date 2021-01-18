@@ -2,7 +2,7 @@ package champ.relics;
 
 import basemod.abstracts.CustomRelic;
 import champ.ChampMod;
-import champ.util.TextureLoader;
+import downfall.util.TextureLoader;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -25,10 +25,10 @@ public class DuelingGlove extends CustomRelic {
 
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
+        System.out.println(c.type);
         if (m != null) {
             if (!m.hasPower(VulnerablePower.POWER_ID) && c.target == AbstractCard.CardTarget.ENEMY && c.type == AbstractCard.CardType.ATTACK) {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new VulnerablePower(m, 1, false), 1));
-
             }
         }
     }

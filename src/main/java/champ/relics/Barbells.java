@@ -2,7 +2,7 @@ package champ.relics;
 
 import basemod.abstracts.CustomRelic;
 import champ.ChampMod;
-import champ.util.TextureLoader;
+import downfall.util.TextureLoader;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -43,7 +43,7 @@ public class Barbells extends CustomRelic {
                 }
             }
 
-            if (possibleCards.size() >= 3) {// 45
+            if (possibleCards.size() >= 10) {// 45
                 AbstractCard card = possibleCards.get(AbstractDungeon.miscRng.random(0, possibleCards.size() - 1));// 46
                 card.upgrade();// 47
                 AbstractDungeon.player.bottledCardUpgradeCheck(card);// 48
