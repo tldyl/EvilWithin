@@ -12,11 +12,11 @@ public class NightmareGuise extends AbstractHexaCard {
 
     //stupid intellij stuff SKILL, SELF, UNCOMMON
 
-    private static final int BLOCK = 14;
+    private static final int BLOCK = 9;
     private static final int UPG_BLOCK = 4;
 
     public NightmareGuise() {
-        super(ID, 2, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseBlock = BLOCK;
         isEthereal = true;
         cardsToPreview = new ShadowGuise();
@@ -29,7 +29,7 @@ public class NightmareGuise extends AbstractHexaCard {
     @Override
     public void triggerOnExhaust() {
         superFlash(Color.PURPLE);
-        AbstractCard q = new ShadowGuise();
+        AbstractCard q = new ShadowGuise(this);
         if (upgraded) q.upgrade();
         atb(new MakeTempCardInHandAction(q));
     }

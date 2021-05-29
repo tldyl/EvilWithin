@@ -33,12 +33,12 @@ public class PlatinumCore extends CustomRelic implements OnCompileRelic {
     public void receiveCompile(AbstractCard function, boolean forGameplay) {
         if (counter != 0) {
             if (function.cost > 0) {
-                function.setCostForTurn(function.cost - 1);
-            }
-            if (forGameplay) {
-                counter -= 1;
-                flash();
-                if (counter == 0) grayscale = true;
+                function.freeToPlayOnce = true;
+                if (forGameplay) {
+                    counter -= 1;
+                    flash();
+                    if (counter == 0) grayscale = true;
+                }
             }
         }
     }

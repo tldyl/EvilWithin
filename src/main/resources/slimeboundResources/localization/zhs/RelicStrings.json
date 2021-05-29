@@ -63,7 +63,7 @@
     "NAME": "黏液居民",
     "FLAVOR": "是它跟着我回家的。我能收养它吗？",
     "DESCRIPTIONS": [
-      "战斗开始时， #yslimeboundmod:分裂 #yslimeboundmod好斗史莱姆 。"
+      "战斗开始时， #yslimeboundmod:分裂 #yslimeboundmod:好斗史莱姆 。"
     ]
   },
   "Slimebound:SlimedSkullRelic": {
@@ -99,7 +99,7 @@
     "NAME": "粘胶立方体",
     "FLAVOR": "嘿，它粘到你身上了。",
     "DESCRIPTIONS": [
-      "每当你抽到 #r诅咒 或 #y状态 牌时，抽 #b1 张牌。"
+      "每当你抽到 #y状态 牌时，抽 #b1 张牌。"
     ]
   }
 }

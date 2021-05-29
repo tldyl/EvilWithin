@@ -6,32 +6,18 @@
       " damage back."
     ]
   },
-  "champ:ResolvePower": {
-    "NAME": "Fatigue",
-    "DESCRIPTIONS": [
-      "You have #b1 #yStrength for every #b10 Fatigue. At the end of combat, restore your Fatigued HP."
-    ]
-  },
   "champ:FocusedDefPower": {
     "NAME": "Focused: Defensive",
     "DESCRIPTIONS": [
-      "At the end of your turn, if you have at least #b20 #yCounter, gain #b",
+      "The next time you use a #yFinisher this turn, gain #b",
       " #yBlock."
     ]
   },
   "champ:FocusedBerPower": {
     "NAME": "Focused: Berserker",
     "DESCRIPTIONS": [
-      "At the end of your turn, if you have at least #b20 #yFatigue, deal #b",
+      "The next time you use a #yFinisher this turn, deal #b",
       " damage to ALL enemies."
-    ]
-  },
-  "champ:EnchantedShieldPower": {
-    "NAME": "Enchanted Shield",
-    "DESCRIPTIONS": [
-      "Prevent the next time you would lose HP this turn.",
-      "Prevent the next #b",
-      " times you would lose HP this turn."
     ]
   },
   "champ:ShieldWallPower": {
@@ -93,7 +79,8 @@
     "NAME": "Dancing Master",
     "DESCRIPTIONS": [
       "The third time you enter a #yStance each turn, gain #b",
-      " [E] and draw #b2 cards. ",
+      " [E] and draw #b",
+      " cards. ",
       " remaining.",
       "Used this turn.",
 	  ""
@@ -102,17 +89,17 @@
   "champ:StrikeOfGeniusPower": {
     "NAME": "Strike of Genius",
     "DESCRIPTIONS": [
-      "At the start of your turn, add a random card that Enters a Stance to your hand. It costs #b0 until played and Exhausts.",
+      "At the start of your turn, add a random card containing \"Strike\" to your hand. It costs #b0 until played and Exhausts.",
       "At the start of your turn, add #b",
-      " random cards that Enter a Stance to your hand. They cost #b0 until played and Exhausts."
+      " random cards containing \"Strike\" to your hand. They cost #b0 until played and Exhaust."
     ]
   },
   "champ:StrikeOfGeniusUpgradedPower": {
     "NAME": "Strike of Genius+",
     "DESCRIPTIONS": [
-      "At the start of your turn, add a random #yupgraded card that Enters a Stance to your hand. It costs #b0 until played.",
+      "At the start of your turn, add a random #yupgraded card containing \"Strike\" to your hand. It costs #b0 until played and Exhausts.",
       "At the start of your turn, add #b",
-      " random #yupgraded cards that Enter a Stance to your hand. They cost #b0 until played."
+      " random #yupgraded cards containing \"Strike\" to your hand. They cost #b0 until played and Exhaust."
     ]
   },
   "champ:DefensiveStylePower": {
@@ -133,7 +120,7 @@
     "NAME": "Berserker Style",
     "DESCRIPTIONS": [
       "#yBerserker #yTechniques grant #b",
-      " more #yFatigue."
+      " more #yVigor."
     ]
   },
   "champ:FalseCounterPower": {
@@ -153,10 +140,19 @@
     ]
   },
   "champ:IronFortressPower": {
-    "NAME": "Iron Fortress",
+    "NAME": "Technical Jig: Defensive",
     "DESCRIPTIONS": [
-      "Whenever you enter a Stance, gain #b",
-      " Block and #yCounter."
+      "Whenever you enter a Stance, trigger Defensive Stance's technique",
+      " #b",
+      " times."
+    ]
+  },
+  "champ:IronFortressVigorPower": {
+    "NAME": "Technical Jig: Berserker",
+    "DESCRIPTIONS": [
+      "Whenever you enter a Stance, trigger Berserker Stance's technique",
+      " #b",
+      " times."
     ]
   },
   "champ:LastStandMod": {
@@ -209,6 +205,20 @@
     "DESCRIPTIONS": [
       "At the start of your next turn, return ",
       " to your hand. It costs #b0 until played."
+    ]
+  },
+  "champ:ResolvePower": {
+    "NAME": "Fatigue",
+    "DESCRIPTIONS": [
+      "At the end of combat, restore your Fatigued HP."
+    ]
+  },
+  "champ:DualPlaySrikePower": {
+    "NAME": "Flurry of Strikes",
+    "DESCRIPTIONS": [
+      "Your next #yStrike is played twice this turn.",
+      "Your next ",
+      " #yStrikes are played twice this turn."
     ]
   }
 }

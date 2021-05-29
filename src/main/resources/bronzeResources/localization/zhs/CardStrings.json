@@ -17,14 +17,14 @@
   },
   "bronze:Explode": {
     "NAME": "爆炸",
-    "DESCRIPTION": " bronze:插入 *灼伤 。 NL bronze:编译 - 所有敌人失去 !M! 点生命。",
+    "DESCRIPTION": "给予所有敌人 !M! 层 hexamod:灼魂 。 NL bronze:编译 *错误 - bronze:插入 !bauto! 张 *灼伤 。",
     "EXTENDED_DESCRIPTION": [
       "不稳定的",
       "爆炸"
     ]
   },
   "bronze:DonuBeam": {
-    "NAME": "甜圈激光",
+    "NAME": "原型激光",
     "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL bronze:编译 - 获得 !M! 力量 并 失去 !bauto! 敏捷 。",
     "EXTENDED_DESCRIPTION": [
       "平滑",
@@ -32,7 +32,7 @@
     ]
   },
   "bronze:DecaBeam": {
-    "NAME": "八体护盾",
+    "NAME": "原型护盾",
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL bronze:编译 - 获得 !M! 层 多层护甲 并 bronze:插入 !bauto! 张 *晕眩 。",
     "EXTENDED_DESCRIPTION": [
       "锯齿",
@@ -125,11 +125,7 @@
   },
   "bronze:Overheat": {
     "NAME": "过热",
-    "DESCRIPTION": "受到 !M! 点伤害。 NL 造成 !D! 点伤害。 NL bronze:编译 *错误 - bronze:插入 *灼伤+ 。",
-    "EXTENDED_DESCRIPTION": [
-      "高温",
-      "灼伤"
-    ]
+    "DESCRIPTION": "造成 !D! 点伤害。 移除下一张 bronze:编码 中的 bronze:编译 *错误 。"
   },
   "bronze:CutThrough": {
     "NAME": "斩破命运",
@@ -213,12 +209,12 @@
     ]
   },
   "bronze:Shell": {
-    "NAME": "外壳",
+    "NAME": "区块链",
     "DESCRIPTION": "获得 !M! 层 bronze:残影 。",
     "UPGRADE_DESCRIPTION": "获得 !M! 层 bronze:残影 。 NL bronze:编译 - 获得 !M! 层 bronze:残影 。",
     "EXTENDED_DESCRIPTION": [
-      "卷缩",
-      "护盾"
+      "区块",
+      "链接"
     ]
   },
   "bronze:BitShift": {
@@ -524,7 +520,7 @@
   },
   "bronze:Hardcode": {
     "NAME": "硬编码",
-    "DESCRIPTION": " 即逝 。 NL 你生成的下张 *方法 将加入牌组。"
+    "DESCRIPTION": "你生成的下张 *方法 将加入牌组。 NL 从牌组中移除构成 *方法 的牌（包括本牌）。"
   },
   "bronze:SpaghettiCode": {
     "NAME": "意面代码",
@@ -542,7 +538,7 @@
   },
   "bronze:CleanCode": {
     "NAME": "简明代码",
-    "DESCRIPTION": "下 !M! 次生成 *方法 时，移除其中 bronze:编译错误 。"
+    "DESCRIPTION": "下 !M! 次生成 *方法 时，移除其中 bronze:编译 *错误 。"
   },
   "bronze:BranchBlock": {
     "NAME": "分支: 格挡",
@@ -596,13 +592,13 @@
   },
   "bronze:Turbo": {
     "NAME": "内核加速",
-    "DESCRIPTION": "获得 [E] [E] 。 NL bronze:插入 *虚空 。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL 获得 [E] [E] 。 NL bronze:插入 *虚空 。"
+    "DESCRIPTION": "获得 [E] [E] 。 NL 将一张 *虚空 加入你的弃牌堆。",
+    "UPGRADE_DESCRIPTION": "获得 [E] [E] [E] 。 NL 将一张 *虚空 加入你的弃牌堆。"
   },
   "bronze:BugBarrage": {
     "NAME": "错误齐射",
-    "DESCRIPTION": "将1张 *伤口 加入手牌。 NL 手牌中每有一张 状态牌 造成 !D! 点伤害。",
-    "UPGRADE_DESCRIPTION": "将 !M! 张 *伤口 加入手牌。 NL 手牌中每有一张 状态牌 造成 !D! 点伤害。",
+    "DESCRIPTION": "将1张 *伤口 加入手牌。 NL bronze:循环 手牌中的 状态牌 。每 bronze:循环 一张牌，造成 !D! 点伤害。",
+    "UPGRADE_DESCRIPTION": "将 !M! 张 *伤口 加入手牌。 NL bronze:循环 手牌中的 状态牌 。每 bronze:循环 一张牌，造成 !D! 点伤害。",
     "EXTENDED_DESCRIPTION": [
       " NL （攻击 ",
       " 次）"

@@ -23,6 +23,7 @@ import com.megacrit.cardcrawl.powers.BarricadePower;
 import java.util.ArrayList;
 
 public class ArchetypeAct3BlockNewAge extends ArchetypeBaseIronclad {
+    public static final int FORTIFICATION_AMOUNT = 10;
 
     public ArchetypeAct3BlockNewAge() {
         super("IC_BLOCK_ARCHETYPE", "Block");
@@ -102,7 +103,7 @@ public class ArchetypeAct3BlockNewAge extends ArchetypeBaseIronclad {
                     break;
                 case 5:
                     addToList(cardsList, new EnMetallicize());
-                    addToList(cardsList, new EnGhostlyArmor(), extraUpgrades);
+                    addToList(cardsList, new EnGhostlyArmor());
                     addToList(cardsList, new EnBodySlam());
                     turn = 0;
                     looped = true;
@@ -123,7 +124,7 @@ public class ArchetypeAct3BlockNewAge extends ArchetypeBaseIronclad {
                     turn++;
                     break;
                 case 2:
-                    addToList(cardsList, new EnGhostlyArmor(), extraUpgrades);
+                    addToList(cardsList, new EnGhostlyArmor());
                     addToList(cardsList, new EnEntrench());
                     addToList(cardsList, new EnBodySlam());
                     turn++;

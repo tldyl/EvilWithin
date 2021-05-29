@@ -27,8 +27,8 @@
     "DESCRIPTION": "Choose a card in your hand. NL Put a copy of that card on top of your draw pile. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Choose a card in your hand. NL Add a copy of it into your hand. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "Choose a card to add a copy into your hand.",
-      "Choose a card to put a copy on top of your draw pile."
+      " to add a copy into your hand.",
+      " to put a copy on top of your draw pile."
     ]
   },
   "Slimebound:Overexert": {
@@ -92,8 +92,8 @@
   },
   "Slimebound:Dissolve": {
     "NAME": "Dissolve",
-    "DESCRIPTION": "Draw a card, then Exhaust a card in your hand. Add a number of *Licks to your hand equal to it's cost. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw a card, then Exhaust a card in your hand. Add a number of *Licks to your hand equal to it's cost plus 1. NL Exhaust."
+    "DESCRIPTION": "Draw a card, then Exhaust a card in your hand. Add a number of *Licks to your hand equal to its cost. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw a card, then Exhaust a card in your hand. Add a number of *Licks to your hand equal to its cost plus 1. NL Exhaust."
   },
   "Slimebound:DuplicatedForm": {
     "NAME": "Duplicated Form",
@@ -105,8 +105,8 @@
   },
   "Slimebound:Recollect": {
     "NAME": "Recollect",
-    "DESCRIPTION": "Gain !B! Block. NL Return a random 0-cost Exhausted card to your hand.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Return 2 random 0-cost Exhausted cards to your hand.",
+    "DESCRIPTION": "Gain !B! Block. NL expansioncontent:Exhume a random 0-cost card.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL expansioncontent:Exhume 2 random 0-cost cards.",
     "EXTENDED_DESCRIPTION": [
       "Not... Exhausted..."
     ]
@@ -125,8 +125,8 @@
   },
   "Slimebound:Recycling": {
     "NAME": "Recycling",
-    "DESCRIPTION": "At the start of your turn, return a random Exhausted 0-cost card to your hand.",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, return a random Exhausted 0-cost card to your hand."
+    "DESCRIPTION": "At the start of your turn, expansioncontent:Exhume a random 0-cost card.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, expansioncontent:Exhume a random 0-cost card."
   },
   "Slimebound:Repurpose": {
     "NAME": "Repurpose",
@@ -191,7 +191,7 @@
   },
   "Slimebound:WasteNot": {
     "NAME": "Waste Not",
-    "DESCRIPTION": "Return all 0-cost Exhausted cards to your hand. NL Exhaust.",
+    "DESCRIPTION": "expansioncontent:Exhume all 0-cost cards. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Not... Exhausted..."
     ]
@@ -207,8 +207,8 @@
   },
   "Slimebound:HungryTackle": {
     "NAME": "Hungry Tackle",
-    "DESCRIPTION": "Deal !D! damage and !SlimeboundSelfharm! damage to yourself. NL Return a random 0-cost Exhausted card to your hand.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage and !SlimeboundSelfharm! damage to yourself. NL Return 2 random 0-cost Exhausted cards to your hand."
+    "DESCRIPTION": "Deal !D! damage and !SlimeboundSelfharm! damage to yourself. NL expansioncontent:Exhume a random 0-cost card.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage and !SlimeboundSelfharm! damage to yourself. NL expansioncontent:Exhume 2 random 0-cost cards."
   },
   "Slimebound:FinishingTackle": {
     "NAME": "Opening Tackle",
@@ -273,7 +273,7 @@
   },
   "Slimebound:LeechLife": {
     "NAME": "Leech Life",
-    "DESCRIPTION": "Deal !D! damage. NL slimeboundmod:Consume - Heal HP equal to the enemy's slimeboundmod:Goop. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL slimeboundmod:Consume - Heal HP equal to the enemy's slimeboundmod:Goop, up to !M!. NL Exhaust."
   },
   "Slimebound:Equalize": {
     "NAME": "Equalize",
@@ -285,12 +285,13 @@
   },
   "Slimebound:PrepareCrush": {
     "NAME": "Prepare: Crush",
-    "DESCRIPTION": "Next turn, gain [E] [E] [E] and !M! Strength, and add Slime Crush to your hand.",
-    "UPGRADE_DESCRIPTION": "Next turn, gain [E] [E] [E] [E] and !M! Strength, and add Slime Crush to your hand."
+    "DESCRIPTION": "Next turn, gain [E] [E] [E] and !SlimeboundSlimed! Strength, and add SLIME CRUSH to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Next turn, gain [E] [E] [E] [E] and !SlimeboundSlimed! Strength, and add SLIME CRUSH+ to your hand. NL Exhaust."
   },
   "Slimebound:SlimeCrush": {
     "NAME": "SLIME CRUSH!!!",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Exhaust."
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Ethereal. NL Deal !D! damage to ALL enemies. NL Exhaust."
   },
   "Slimebound:DivideAndConquer": {
     "NAME": "Divide & Conquer",

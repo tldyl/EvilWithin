@@ -70,12 +70,27 @@
       " into your hand at the start of your next turn."
     ]
   },
+  "expansioncontent:AddSameInstancePower": {
+    "NAME": "Delayed Card",
+    "DESCRIPTIONS": [
+      "Add ",
+      " into your hand at the start of your next turn."
+    ]
+  },
+  "expansioncontent:NextTurnExhumePower": {
+    "NAME": "Delayed Exhume",
+    "DESCRIPTIONS": [
+      "Exhume ",
+      " at the start of your next turn."
+    ]
+  },
   "expansioncontent:PretendHexWheelPower": {
     "NAME": "Hexaburn",
     "DESCRIPTIONS": [
       "In #b",
-      " turns, deal #b6 damage to a random enemy #b6 times.",
-      "At the end of your turn, deal #b6 damage to a random enemy #b6 times."
+      " turns, deal #b",
+      "At the end of your turn, deal #b",
+      " damage to a random enemy #b6 times."
     ]
   },
   "expansioncontent:VexVinciblePower": {

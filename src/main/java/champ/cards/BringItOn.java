@@ -1,5 +1,6 @@
 package champ.cards;
 
+import champ.ChampChar;
 import champ.ChampMod;
 import champ.powers.CounterPower;
 import champ.stances.AbstractChampStance;
@@ -22,13 +23,7 @@ public class BringItOn extends AbstractChampCard {
         baseBlock = 10;
         //exhaust = true;
         tags.add(ChampMod.FINISHER);
-    }
-
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if ((AbstractDungeon.player.stance instanceof NeutralStance))
-            return false;
-        return super.canUse(p, m);
+        postInit();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

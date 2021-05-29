@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
 package automaton.events;
 
 import automaton.AutomatonMod;
@@ -148,7 +143,7 @@ public class CrystalForgeAutomaton extends AbstractImageEvent {
                         this.screenNum = 2;
                         this.pickCardForTransmute = true;
                         this.imageEventText.updateBodyText(TRANSMUTE);
-                        AbstractDungeon.gridSelectScreen.open(CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()), 1, DESCRIPTIONS[5], false, true, false, false);
+                        AbstractDungeon.gridSelectScreen.open(CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()), 1, DESCRIPTIONS[5], false, false, false, false);
 
                         this.imageEventText.clearAllDialogs();
                         this.imageEventText.setDialogOption(OPTIONS[4]);

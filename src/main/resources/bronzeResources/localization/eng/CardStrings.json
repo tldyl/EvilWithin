@@ -17,7 +17,7 @@
   },
   "bronze:Explode": {
     "NAME": "Explode",
-    "DESCRIPTION": "bronze:Insert a *Burn. NL bronze:Compile - ALL enemies lose !M! HP.",
+    "DESCRIPTION": "Apply !M! hexamod:Soulburn to ALL enemies. NL bronze:Compile *Error - bronze:Insert !bauto! *Burn.",
     "EXTENDED_DESCRIPTION": [
       "unstable",
       "Bomb"
@@ -125,11 +125,7 @@
   },
   "bronze:Overheat": {
     "NAME": "Overheat",
-    "DESCRIPTION": "Take !M! damage. NL Deal !D! damage. NL bronze:Compile *Error - bronze:Insert a *Burn+.",
-    "EXTENDED_DESCRIPTION": [
-      "heated",
-      "Burn"
-    ]
+    "DESCRIPTION": "Deal !D! damage. NL Remove the next bronze:Compile *Error you would bronze:Encode."
   },
   "bronze:CutThrough": {
     "NAME": "Cut Through",
@@ -213,12 +209,12 @@
     ]
   },
   "bronze:Shell": {
-    "NAME": "Shell",
+    "NAME": "Blockchain",
     "DESCRIPTION": "Gain !M! bronze:Blur.",
     "UPGRADE_DESCRIPTION": "Gain !M! bronze:Blur. NL bronze:Compile - Gain !M! bronze:Blur.",
     "EXTENDED_DESCRIPTION": [
-      "curling",
-      "Shell"
+      "block",
+      "Chain"
     ]
   },
   "bronze:BitShift": {
@@ -524,7 +520,7 @@
   },
   "bronze:Hardcode": {
     "NAME": "Hardcode",
-    "DESCRIPTION": "Fleeting. NL The next Function you create goes into your deck permanently instead of your hand."
+    "DESCRIPTION": "Next time you create a Function, add it to your deck. NL Remove the cards used to create it (including this)."
   },
   "bronze:SpaghettiCode": {
     "NAME": "Spaghetti Code",
@@ -533,7 +529,7 @@
   },
   "bronze:Assembly": {
     "NAME": "Assembly",
-    "DESCRIPTION": "Scry !M!. NL bronze:Encode all cards with bronze:Encode discarded. NL Exhaust."
+    "DESCRIPTION": "Scry !M!. NL bronze:Encode all cards with bronze:Encode discarded in selected order. NL Exhaust."
   },
   "bronze:FineTuning": {
     "NAME": "Fine Tuning",
@@ -596,13 +592,13 @@
   },
   "bronze:Turbo": {
     "NAME": "Turbo",
-    "DESCRIPTION": "Gain [E] [E] . NL bronze:Insert a *Void.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Gain [E] [E] . NL bronze:Insert a *Void."
+    "DESCRIPTION": "Gain [E] [E] . NL Add a *Void into your discard pile.",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E]. NL Add a *Void into your discard pile."
   },
   "bronze:BugBarrage": {
     "NAME": "Bug Barrage",
-    "DESCRIPTION": "Add 1 *Wound to your hand. NL Deal !D! damage for each Status card in hand.",
-    "UPGRADE_DESCRIPTION": "Add !M! *Wounds to your hand. NL Deal !D! damage for each Status card in hand.",
+    "DESCRIPTION": "Add 1 *Wound to your hand. NL bronze:Cycle each Status in your hand, dealing !D! damage for each.",
+    "UPGRADE_DESCRIPTION": "Add !M! *Wounds to your hand. NL bronze:Cycle each Status in your hand, dealing !D! damage for each.",
     "EXTENDED_DESCRIPTION": [
       " NL (Hits ",
       " times.)"
@@ -618,8 +614,8 @@
   },
   "bronze:FindAndReplace": {
     "NAME": "Find and Replace",
-    "DESCRIPTION": "Ethereal. NL Put a card from your draw or discard pile into your hand. NL Add a Dazed where it was. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Put a card from your draw or discard pile into your hand. NL Add a Dazed where it was. NL Exhaust.",
+    "DESCRIPTION": "Ethereal. NL Fetch a card from your draw or discard pile. NL Add a Dazed where it was. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Fetch a card from your draw or discard pile. NL Add a Dazed where it was. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Choose."
     ]

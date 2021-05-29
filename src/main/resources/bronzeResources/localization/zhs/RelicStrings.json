@@ -3,7 +3,7 @@
     "NAME": "铜制核心",
     "FLAVOR": "每50,000年一换。",
     "DESCRIPTIONS": [
-      "每场战斗你生成的第一张 #y方法 在该回合费用减少 #b1 。"
+      "每场战斗你生成的第一张 #y方法 直到打出前费用为 #b0 。"
     ]
   },
   "bronze:ProtectiveGoggles": {
@@ -52,7 +52,7 @@
     "NAME": "电缆线轴",
     "FLAVOR": "缠绕起来的一团……",
     "DESCRIPTIONS": [
-      "每场战斗的打出的第一张 #y编码 牌，将其复制品加入手牌。"
+      "每场战斗的打出的第一张 #y编码 牌，将其复制品加入队列。"
     ]
   },
   "bronze:ElectromagneticCoil": {
@@ -67,7 +67,7 @@
     "FLAVOR": "更新日志: 提升用户体验。",
     "DESCRIPTIONS": [
       "替换 ",
-      "。[] NL 每场战斗，你生成的前 #b3 张 #y方法 该回合费用降低 #b1 。"
+      "。[] NL 每场战斗，你生成的前 #b3 张 #y方法 直到打出前耗能为 #b0 。"
     ]
   },
   "bronze:BottledCode": {
@@ -94,11 +94,11 @@
       "#y状态牌 在打出时会触发正面效果。"
     ]
   },
-  "bronze:VexRelic": {
+  "bronze:AnalyticalCore": {
     "NAME": "悖论制品",
     "FLAVOR": "你从未见过如此意义不明的人工制品。",
     "DESCRIPTIONS": [
-      "每场战斗开始时, #y编译 随机一张 #y方法 。其获得 #y保留 。"
+      "每回合开始时,将一张随机 #y虚无编码 牌加入手牌。"
     ]
   }
 }

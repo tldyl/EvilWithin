@@ -82,6 +82,13 @@ public abstract class AbstractGuardianCard extends CustomCard {
 
     }
 
+    protected void upgradeSecondaryM(int amount) {
+        this.secondaryM += amount;
+        this.upgradesecondaryM = true;
+    }
+
+
+
     /*
 
     @Override
@@ -210,9 +217,6 @@ public abstract class AbstractGuardianCard extends CustomCard {
     public static void brace(int modeShiftValue) {
         if (!AbstractDungeon.player.hasPower(ModeShiftPower.POWER_ID)){
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ModeShiftPower(AbstractDungeon.player, AbstractDungeon.player, 20), 20));
-        }
-        if (AbstractDungeon.player.hasRelic(DefensiveModeMoreBlock.ID)){
-            modeShiftValue += 1;
         }
         AbstractDungeon.actionManager.addToBottom(new BraceAction(modeShiftValue));
 
@@ -484,7 +488,7 @@ public abstract class AbstractGuardianCard extends CustomCard {
     @Override
     public void render(SpriteBatch sb) {
         super.render(sb);
-        if (socketCount > 0) {
+        if (socketCount > 0 && !isFlipped) {
             Texture socketTexture = null;
             for (int i = 0; i < socketCount; i++) {
 

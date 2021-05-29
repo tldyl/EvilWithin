@@ -13,10 +13,13 @@ import charbosses.cards.purple.EnFlyingSleeves;
 import charbosses.powers.bossmechanicpowers.IroncladStatusPower;
 import charbosses.powers.bossmechanicpowers.SilentMirrorImagePower;
 import charbosses.relics.*;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 import java.util.ArrayList;
 
@@ -90,7 +93,7 @@ public class ArchetypeAct2MirrorImageNewAge extends ArchetypeBaseSilent {
                     //Turn 4
                     addToList(cardsList, new EnFootwork()); //Removed
                     addToList(cardsList, new EnLegSweep()); //Removed
-                    addToList(cardsList, new EnRiddleWithHoles(), extraUpgrades);  //Not played here
+                    addToList(cardsList, new EnRiddleWithHoles());  //Not played here
                     turn = 0;
                     looped = true;
                     break;
@@ -101,7 +104,7 @@ public class ArchetypeAct2MirrorImageNewAge extends ArchetypeBaseSilent {
             switch (turn) {
                 case 0:
                     addToList(cardsList, new EnJAX(), true);
-                    addToList(cardsList, new EnDeflect());
+                    addToList(cardsList, new EnDeflect(), extraUpgrades);
                     addToList(cardsList, new EnDecay());  //Not played here
                     turn++;
                     break;
@@ -119,7 +122,7 @@ public class ArchetypeAct2MirrorImageNewAge extends ArchetypeBaseSilent {
                     break;
                 case 3:
                     addToList(cardsList, new EnLegSweep()); //Removed
-                    addToList(cardsList, new EnRiddleWithHoles(), extraUpgrades);  //Not played here
+                    addToList(cardsList, new EnRiddleWithHoles());  //Not played here
                     addToList(cardsList, new EnBlur());
                     turn = 0;
                     break;
@@ -131,6 +134,6 @@ public class ArchetypeAct2MirrorImageNewAge extends ArchetypeBaseSilent {
 
     @Override
     public void initializeBonusRelic() {
-        addRelic(new CBR_PenNib());
+        addRelic(new CBR_OddlySmoothStone());
     }
 }

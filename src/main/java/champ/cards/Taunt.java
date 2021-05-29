@@ -4,6 +4,7 @@ import champ.ChampMod;
 import champ.stances.BerserkerStance;
 import champ.stances.DefensiveStance;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import downfall.actions.OctoChoiceAction;
 import downfall.cards.OctoChoiceCard;
@@ -23,6 +24,7 @@ public class Taunt extends AbstractChampCard implements OctopusCard {
         tags.add(ChampMod.TECHNIQUE);
         tags.add(ChampMod.OPENER);
         this.magicNumber = this.baseMagicNumber = 1;
+        postInit();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -37,7 +39,7 @@ public class Taunt extends AbstractChampCard implements OctopusCard {
             if (!(p.stance instanceof DefensiveStance)) validStances.add(DefensiveStance.STANCE_ID);
             if (!(p.stance instanceof BerserkerStance)) validStances.add(BerserkerStance.STANCE_ID);
 
-            Collections.shuffle(validStances);
+            Collections.shuffle(validStances, AbstractDungeon.cardRng.random);
 
             switch (validStances.get(0)) {
                 case DefensiveStance.STANCE_ID:

@@ -92,7 +92,7 @@
   "hexamod:GainStrengthThatGoesAwayPower": {
     "NAME": "Here and Now",
     "DESCRIPTIONS": [
-      "If you start and end your turn with the same Ghostflame active, gain ",
+      "If you start and end your turn on the same Ghostflame, gain ",
       " #yStrength."
     ]
   },
@@ -106,10 +106,10 @@
   "hexamod:GiftsFromTheDeadPower": {
     "NAME": "Gifted Cards",
     "DESCRIPTIONS": [
-      "Whenever an #yEthereal card is #yExhausted, draw ",
-      " cards",
-      " card",
-      " next turn."
+      "At the start of your turn, #yReclaim ",
+      " random Afterlife ",
+      " card.",
+      " cards."
     ]
   },
   "hexamod:GiftsFromTheDeadPowerPlus": {
@@ -139,13 +139,13 @@
       "At the end of your turn, lose #b",
       "In #b",
       " turns, lose #b",
-      " #yEnhance."
+      " #yIntensity."
     ]
   },
   "hexamod:ParanormalFormPower": {
     "NAME": "Poltergeist",
     "DESCRIPTIONS": [
-      "Whenever you play an #yEthereal card, deal #b",
+      "Whenever you play an #yAfterlife card, deal #b",
       " damage to a random enemy."
     ]
   },

@@ -28,7 +28,6 @@ public class BossCardTabNamePatch {
             if (tabName[0].equals("Boss")) {
                 tabName[0] = uiStrings.TEXT[0];
             }
-
         }
 
         private static class TabNameLocator extends SpireInsertLocator {

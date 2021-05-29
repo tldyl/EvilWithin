@@ -15,7 +15,7 @@
       "compile",
       "compiled"
     ],
-    "DESCRIPTION": "当 #y编码 的牌生成 #y方法 时获得效果。"
+    "DESCRIPTION": "当 #y编码 的牌生成 #y方法 时获得效果。 NL 某些 #y错误 将是一些 #r负面效果 。"
   },
   {
     "PROPER_NAME": "残影",
@@ -32,5 +32,13 @@
       "insert"
     ],
     "DESCRIPTION": "将一张牌加入抽牌堆。"
+  },
+  {
+    "PROPER_NAME": "循环",
+    "NAMES": [
+      "循环",
+      "cycle"
+    ],
+    "DESCRIPTION": "丢弃一张牌，抽一张牌替换其原来的位置。"
   }
 ]

@@ -39,7 +39,8 @@
     "TEXT": [
       "19. Bosses have an extra Relic.",
       "20. Act 3 Boss has Lizard Tail which heals all HP.",
-      "Obtain the Ruby Key. Break it later."
+      "Obtain the Ruby Key. Break it later.",
+      "4. Bosses have an extra card upgraded."
     ]
   },
   "downfall:ConfigMenuText": {
@@ -52,7 +53,9 @@
       "Allow Standard runs to encounter Downfall Curse cards.",
       "Downfall runs use traditional Map layout - fire before boss, not at start.",
       "Unlock all locked cards and relics for Downfall characters (requires game restart)",
-      "Disable Champ's Stance Helper - for experienced Champions"
+      "Disable Champ's Stance Helper - for experienced Champions",
+      "Disable music overrides (requires game restart)",
+      "Unlock all locked alterative skin for Downfall characters"
     ]
   },
   "downfall:EnergyPanelTip": {
@@ -112,13 +115,15 @@
   },
   "downfall:BossCardReward": {
     "TEXT": [
-      "Add a Boss Card to your deck"
+      "Add a Boss Card to your deck",
+      "Pick a card."
     ]
   },
   "downfall:ColorfulCardReward": {
     "TEXT": [
       "Add a ",
-      " Card to your deck"
+      " Card to your deck",
+      "Pick a Card."
     ]
   },
   "downfall:RunHistoryMonsterNames": {
@@ -130,6 +135,11 @@
     "TEXT": [
       "Whale Hunter",
       "Ended the cycle."
+    ]
+  },
+  "downfall:SingleCardViewPopup": {
+    "TEXT": [
+      "Ammo"
     ]
   }
 }

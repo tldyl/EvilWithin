@@ -55,7 +55,8 @@
       "Settling in by the fire, you decide to see if you have better luck with the Wheel than your last attempt.",
       "The Wheel has chosen a prize. NL NL You need only to reach out and take it.",
       "Success! You've found what you are looking for, and just in time! NL NL #r@CRACK!@ NL NL You may have been a little rough with that last spin... the Wheel has been broken.",
-      "You decide to try your luck another day. NL NL For now, you must rest and regain your composure."
+      "You decide to try your luck another day. NL NL For now, you must rest and regain your composure.",
+      "He lunges at you, but you are ready. NL You slash him open before he can get you with his shiv. NL You treat yourself to your prize, but sadly the Wheel disappears before you can loot it too."
     ],
     "OPTIONS": [
       "[Play]",
@@ -71,7 +72,9 @@
       "[Again!]",
       "[AGAIN!!]",
       "[Punch] #rFight. #gGain #gGremlin #gWheel.",
-      "[Pass] Try again later."
+      "[Pass] Try again later.",
+      "[Prize!] #gPREEMPTIVE #gSTRIKE!",
+      "[Loot]"
     ]
   },
   "downfall:GremlinWheelGameRest": {
@@ -99,11 +102,12 @@
   "downfall:BonfireSpirits": {
     "NAME": "Bonfire Elemental",
     "DESCRIPTIONS": [
-      "The spirits hungrily consume your offering! They gorge themselves on souls, burning brighter as the fire @doubles@ in strength. NL The spirits dance around you excitedly before ~merging~ ~into~ ~your~ ~form,~ filling you with warmth and strength. NL Your Max HP increases by #b10 and you are #ghealed to full HP."
+      "The spirits hungrily consume your offering! They gorge themselves on souls, burning brighter as the fire @doubles@ in strength. NL The spirits dance around you excitedly before ~merging~ ~into~ ~your~ ~form,~ filling you with warmth and strength. NL Your Max HP increases and you are #ghealed to full HP."
     ],
     "OPTIONS": [
       "[Donate] #rLose #r150 #rSouls. #gGain #g10 #gMax #gHP.",
-      "[Locked] Requires 150 Souls."
+      "[Locked] Requires 150 Souls.",
+      "[Donate] #rLose #r150 #rSouls. #gEach #gGremlin #gGains #g2 #gMax #gHP."
     ]
   },
   "downfall:FaceTrader": {
@@ -119,9 +123,9 @@
     "NAME": "The Cursed Fountain",
     "DESCRIPTIONS": [
       "You come across a tinged #p~purple~ #p~liquid~ flowing endlessly from a fountain on a nearby wall. It is one you recognize as deadly to most creatures, but quite beneficial to those subjected to a curse.",
-      "As you drink the #p~liquid,~ you feel a #pdark #pgrasp reach into your mind. It feels luxurious and refreshing.",
-      "Sensing that this #p~liquid~ may be useful, you decide to capture some in a jar to use later. Creatures not attuned to the #pdark #pwater will surely suffer when doused in it.",
       "The fountain's #p~liquid~ is roiling in the souls of the lost. It seems a waste to not make use of them. You channel the souls into your form, ripping them from the #pcursed #pfountain's magic.",
+      "Sensing that this #p~liquid~ may be useful, you decide to capture some in a jar to use later. Creatures not attuned to the #pdark #pwater will surely suffer when doused in it.",
+      "As you drink the #p~liquid,~ you feel a #pdark #pgrasp reach into your mind. It feels luxurious and refreshing.",
       "Leaving the fountain behind, you continue on your way."
     ],
     "OPTIONS": [
@@ -152,7 +156,8 @@
       " #ySouls.",
       "#gGain #ga #yRare #gCard.",
       "[Leave]",
-      "[Locked] No Relic to give."
+      "[Locked] No Relic to give.",
+      "#gGain #g2 #gPotions."
     ]
   },
   "downfall:Designer": {
@@ -367,7 +372,7 @@
   "downfall:Vagrant": {
     "NAME": "Pleading Vagrant",
     "DESCRIPTIONS": [
-      "You kill the man and harvest his soul. ~Gasps~ come from the crowd behind you. NL \"He just killed Burgundy!\" a figure says, as more addicts just like the one you encountered begin to approach you. NL NL You escape, but not without some #rclaws and #rbites.",
+      "You kill the man and harvest his soul. ~Gasps~ come from the crowd behind you. NL \"He just killed Burgundy!\" a figure says, as more beggars just like the one you encountered begin to approach you. NL NL You escape, but not without some #rclaws and #rbites.",
       "You snatch the precious #yrelic from his clutches and walk away. NL From behind you hear, NL \"Have you no shame? ~HAVE~ ~YOU~ ~NO~ ~SHAAAAAME?!\"~ NL You have #pabsolutely #pno #pshame. It is an honor to be robbed by an Overlord of the Spire!"
     ],
     "OPTIONS": [
@@ -460,7 +465,8 @@
       "[I am Gorged] #gGain #g999 #gSouls. #rCursed #r- #r2 #rNormality.",
       "[I am Complete] #gUpgrade #gall #gCards. #rLose #rHeart #rBlessings and #r10 #rMax #rHP.",
       "[Locked] Requires all 3 Heart Blessings.",
-      "[Leave]"
+      "[Leave]",
+      "[I am Complete] #gUpgrade #gall #gCards. #rLose #rHeart #rBlessings and #r2 #rMax #rHP."
     ]
   },
   "downfall:MoaiHead": {
@@ -476,7 +482,9 @@
       " #rSouls. #gGain #g",
       " #gMax #gHP and #gHeal #gto #gfull.",
       "[Locked] Requires ",
-      " Souls."
+      " Souls.",
+      " #rSouls. #gEach #gGremlin #gGains #g",
+      "[Jump Inside] #gHeal #gto #gfull #gHP. #rEach #rGremlin #rLoses #r"
     ]
   },
   "downfall:SensoryStone": {

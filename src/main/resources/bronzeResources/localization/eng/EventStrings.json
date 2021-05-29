@@ -6,14 +6,14 @@
       "None of these drones have what you require."
     ],
     "OPTIONS": [
-      "[Fight Spiker] #gGain #gSpike.",
-      "[Fight Repulsor] #gGain #gDazing #gPulse.",
-      "[Fight Exploder] #gGain #gExplode.",
+      "[Fight Spiker] #gGain #gSpike as a combat reward.",
+      "[Fight Repulsor] #gGain #gDazing #gPulse as a combat reward.",
+      "[Fight Exploder] #gGain #gExplode as a combat reward.",
       "[Leave]",
       "[Begin Combat]",
-      "[Also Fight Spiker] #gGain #gSpike.",
-      "[Also Fight Repulsor] #gGain #gDazing #gPulse.",
-      "[Also Fight Exploder] #gGain #gExplode."
+      "[Also Fight Spiker] #gGain #gSpike as a combat reward.",
+      "[Also Fight Repulsor] #gGain #gDazing #gPulse as a combat reward.",
+      "[Also Fight Exploder] #gGain #gExplode as a combat reward."
     ]
   },
   "bronze:AncientFactory": {
@@ -23,8 +23,8 @@
       "Even for unfinished prototypes, they are still formidable - no need for unnecessary risks."
     ],
     "OPTIONS": [
-      "[Fight Donu Prototype] #gGain #gDonu #gBeam.",
-      "[Fight Deca Prototype] #gGain #gDeca #gShield.",
+      "[Fight Donu Prototype] #gGain #gProto-Beam.",
+      "[Fight Deca Prototype] #gGain #gProto-Shield.",
       "[Fight Both] #gGain #gBoth #gCards.",
       "[Leave]"
     ]

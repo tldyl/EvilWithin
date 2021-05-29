@@ -21,7 +21,7 @@ public class ArchetypeAct1ShivsNewAge extends ArchetypeBaseSilent {
     public ArchetypeAct1ShivsNewAge() {
         super("SI_SHIV_ARCHETYPE", "Shivs");
 
-        maxHPModifier += 100;
+        maxHPModifier += 60;
         actNum = 1;
     }
 
@@ -57,14 +57,14 @@ public class ArchetypeAct1ShivsNewAge extends ArchetypeBaseSilent {
                 case 0:
                     //Turn 1
                     addToList(cardsList, new EnLegSweep());
-                    addToList(cardsList, new EnSurvivor());
+                    addToList(cardsList, new EnDodgeAndRoll());
                     addToList(cardsList, new EnClumsy());  //Removed
                     turn++;
                     break;
                 case 1:
                     //Turn 2
-                    addToList(cardsList, new EnCloakAndDagger(), false);
-                    addToList(cardsList, new EnDefendGreen(), extraUpgrades);
+                    addToList(cardsList, new EnCloakAndDagger());
+                    addToList(cardsList, new EnDefendGreen());
                     addToList(cardsList, new EnDefendGreen());  //Not played here
                     turn++;
                     break;
@@ -78,7 +78,8 @@ public class ArchetypeAct1ShivsNewAge extends ArchetypeBaseSilent {
                 case 3:
                     //Turn 4
                     addToList(cardsList, new EnFootwork()); //Removed
-                    addToList(cardsList, new EnInfiniteBlades()); //Removed
+//                    addToList(cardsList, new EnInfiniteBlades()); //Removed
+                    addToList(cardsList, new EnPiercingWail());
                     addToList(cardsList, new EnBurst());  //Not played here
                     turn = 0;
                     looped = true;
@@ -96,8 +97,8 @@ public class ArchetypeAct1ShivsNewAge extends ArchetypeBaseSilent {
                     c.cost = 0;
                     c.freeToPlayOnce = true;
                     c.modifyCostForCombat(-1);
-                    addToList(cardsList, c, extraUpgrades);
-                    addToList(cardsList, new EnSurvivor(), extraUpgrades);
+                    addToList(cardsList, c);
+                    addToList(cardsList, new EnDodgeAndRoll());
                     turn++;
                     break;
                 case 1:
@@ -110,7 +111,7 @@ public class ArchetypeAct1ShivsNewAge extends ArchetypeBaseSilent {
                 case 2:
                     addToList(cardsList, new EnShiv());
                     addToList(cardsList, new EnBladeDance(), extraUpgrades);
-                    addToList(cardsList, new EnDefendGreen(), extraUpgrades);
+                    addToList(cardsList, new EnDefendGreen());
                     addToList(cardsList, new EnDefendGreen());  //Not played here
                     turn = 0;
                     break;

@@ -16,13 +16,15 @@ import com.megacrit.cardcrawl.powers.BarricadePower;
 import com.megacrit.cardcrawl.powers.DemonFormPower;
 import downfall.downfallMod;
 
+import static charbosses.bosses.Ironclad.NewAge.ArchetypeAct3BlockNewAge.FORTIFICATION_AMOUNT;
+
 public class Fortification extends AbstractMonster {
 
     public static final String ID = downfallMod.makeID("Fortification");
     public static final String NAME = CardCrawlGame.languagePack.getMonsterStrings(ID).NAME;
 
     public Fortification() {
-        super(NAME, "SpireShield", 200, 0.0F, -20.0F, 250.0F, 290.0F, (String)null, -450.0F, -15F);
+        super(NAME, "SpireShield", 170, 0.0F, -20.0F, 250.0F, 290.0F, (String)null, -450.0F, -15F);
         this.type = EnemyType.NORMAL;
         this.loadAnimation("images/monsters/theEnding/shield/skeleton.atlas", "images/monsters/theEnding/shield/skeleton.json", 1.0F);
         AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
@@ -35,7 +37,7 @@ public class Fortification extends AbstractMonster {
     public void takeTurn() {
         if (AbstractCharBoss.boss != null) {
             if (!AbstractCharBoss.boss.isDead && !AbstractCharBoss.boss.isDying)
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractCharBoss.boss, this, 15));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractCharBoss.boss, this, FORTIFICATION_AMOUNT));
             AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1F));
             AbstractDungeon.actionManager.addToBottom(new WaitAction(0.1F));
         }

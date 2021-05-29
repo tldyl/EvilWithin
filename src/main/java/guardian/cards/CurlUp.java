@@ -1,6 +1,7 @@
 package guardian.cards;
 
 
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,6 +11,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import guardian.GuardianMod;
+import guardian.actions.PlaceCardsInHandIntoStasisAction;
+import guardian.actions.PlaceRandomCardInHandIntoStasisAction;
+import guardian.actions.ReduceRightMostStasisAction;
 import guardian.stances.DefensiveMode;
 import guardian.patches.AbstractCardEnum;
 
@@ -26,9 +30,8 @@ public class CurlUp extends AbstractGuardianCard {
 
     //TUNING CONSTANTS
     private static final int BLOCK = 10;
-    private static final int UPGRADE_BONUS = 3;
     private static final int MULTICOUNT = 0;
-    private static final int SOCKETS = 1;
+    private static final int SOCKETS = 0;
     private static final boolean SOCKETSAREAFTER = true;
     public static String UPGRADED_DESCRIPTION;
 
@@ -43,8 +46,6 @@ public class CurlUp extends AbstractGuardianCard {
 
     public CurlUp() {
         super(ID, NAME, GuardianMod.getResourcePath(IMG_PATH), COST, DESCRIPTION, TYPE, AbstractCardEnum.GUARDIAN, RARITY, TARGET);
-
-
         this.baseBlock = BLOCK;
         this.multihit = MULTICOUNT;
         this.socketCount = SOCKETS;
@@ -55,14 +56,11 @@ public class CurlUp extends AbstractGuardianCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p, m);
-        //if (upgraded) AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-
-        if (p.stance instanceof DefensiveMode) {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-        } else {
-            brace(magicNumber);
-        }
-        super.useGems(p, m);
+        if (!upgraded)
+            this.addToBot(new PlaceRandomCardInHandIntoStasisAction(p));
+        else
+            this.addToBot(new PlaceCardsInHandIntoStasisAction(p, 1, false));
+        brace(magicNumber);
     }
 
     public AbstractCard makeCopy() {
@@ -72,9 +70,7 @@ public class CurlUp extends AbstractGuardianCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeMagicNumber(3);
-            upgradeBlock(3);
-
+            this.rawDescription = UPGRADED_DESCRIPTION;
             this.updateDescription();
         }
     }

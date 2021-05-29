@@ -14,23 +14,20 @@ public class FlamesFromBeyond extends AbstractHexaCard {
 
     //stupid intellij stuff SKILL, NONE, COMMON
 
-    private static final int MAGIC = 12;
+    private static final int MAGIC = 18;
     private static final int UPG_MAGIC = 6;
 
     public FlamesFromBeyond() {
-        super(ID, -2, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
+        super(ID, 2, CardType.SKILL, CardRarity.COMMON, CardTarget.ALL_ENEMY);
         baseBurn = burn = MAGIC;
         isEthereal = true;
         tags.add(HexaMod.AFTERLIFE);
     }
 
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        cantUseMessage = EXTENDED_DESCRIPTION[0];
-        return false;
-    }
-
     public void use(AbstractPlayer p, AbstractMonster m) {
+        for (AbstractMonster q : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            burn(q, burn);
+        }
     }
 
     @Override

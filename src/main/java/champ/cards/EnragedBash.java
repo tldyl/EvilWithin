@@ -1,7 +1,7 @@
 package champ.cards;
 
 import champ.ChampMod;
-import champ.actions.ModifyDamageAndMagicAction;
+import champ.actions.ModifyMagicAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -23,9 +23,10 @@ public class EnragedBash extends AbstractChampCard {
         baseDamage = DAMAGE;
         baseMagicNumber = magicNumber = MAGIC;
        // baseCool = cool = 2;
-        myHpLossCost = 5;
+        //myHpLossCost = 5;
         tags.add(ChampMod.COMBO);
         tags.add(ChampMod.COMBOBERSERKER);
+        postInit();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -48,10 +49,12 @@ public class EnragedBash extends AbstractChampCard {
                 }
             }
         }
-        if (bcombo())
-            atb(new ModifyDamageAndMagicAction(uuid, 1));
+        if (bcombo()){
+            atb(new ModifyMagicAction(this.uuid, 1));
+            this.rawDescription = this.EXTENDED_DESCRIPTION[0];
+            initializeDescription();
+        }
 
-        fatigue(5);
     }
 
     @Override
@@ -60,8 +63,6 @@ public class EnragedBash extends AbstractChampCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(1);
-        this.rawDescription = UPGRADE_DESCRIPTION;
-        initializeDescription();
+        upgradeDamage(3);
     }
 }

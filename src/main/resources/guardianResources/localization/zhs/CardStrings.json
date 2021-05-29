@@ -19,8 +19,8 @@
   },
   "Guardian:Gem_Lightblue": {
     "NAME": "碧玺",
-    "DESCRIPTION": " guardianmod:宝石 。 NL 获得 1 点 guardianmod:临时 荆棘 。",
-    "UPGRADE_DESCRIPTION": "获得 1 点 guardianmod:临时 荆棘 。"
+    "DESCRIPTION": " guardianmod:宝石 。 NL 获得 3 点 guardianmod:临时 荆棘 。",
+    "UPGRADE_DESCRIPTION": "获得 3 点 guardianmod:临时 荆棘 。"
   },
   "Guardian:Gem_White": {
     "NAME": "石英",
@@ -65,7 +65,7 @@
   },
   "Guardian:GuardianWhirl": {
     "NAME": "守护者旋风",
-    "DESCRIPTION": "guardianmod:防御模式 时才能被打出，退出当前 姿态 。对所有敌人造成 !D! 点伤害 !M! 次。"
+    "DESCRIPTION": "至少有20点 格挡 才能被打出。 NL 对所有敌人造成 !D! 点伤害 !M! 次。"
   },
   "Guardian:VentSteam": {
     "NAME": "蒸汽喷射",
@@ -74,7 +74,8 @@
   },
   "Guardian:CurlUp": {
     "NAME": "蜷身",
-    "DESCRIPTION": "处于 guardianmod:防御模式 时获得 !B! 点 格挡 。 NL 否则， guardianmod:提防 !M! 。"
+    "DESCRIPTION": "将随机一张手牌 guardianmod:凝滞 。 NL guardianmod:提防 !M! 。",
+    "UPGRADE_DESCRIPTION": "将一张手牌 guardianmod:凝滞 。 NL guardianmod:提防 !M! 。"
   },
   "Guardian:TimeBomb": {
     "NAME": "时间炸弹",
@@ -116,7 +117,7 @@
   },
   "Guardian:Harden": {
     "NAME": "硬化",
-    "DESCRIPTION": "处于 guardianmod:防御模式 时才能被打出。 NL 获得 !B! 点 格挡 和 !M! 层 荆棘 。"
+    "DESCRIPTION": "至少有20点 格挡 才能被打出。 NL guardianmod:提防 !GuardianSecondM! 并获得 !M! 层 荆棘 。"
   },
   "Guardian:SentryBeam": {
     "NAME": "哨卫射线",
@@ -153,7 +154,7 @@
   },
   "Guardian:PackageSentry": {
     "NAME": "组件: 哨卫",
-    "DESCRIPTION": "增加一张 *哨卫射线 和两张 *哨卫震荡 到你的手牌。它们的费用本场战斗降低1点。 NL 消耗 。",
+    "DESCRIPTION": "增加一张 *哨卫射线 和两张 *哨卫震荡 到你的手牌。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "增加一张已 升级 的 *哨卫射线 和两张 *哨卫震荡 到你的手牌。 NL 消耗 。"
   },
   "Guardian:PackageWalker": {
@@ -256,11 +257,11 @@
   },
   "Guardian:PrismaticBeam": {
     "NAME": "棱镜射线",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 每 guardianmod:镶嵌 一颗 guardianmod:宝石 造成 !D! 点伤害。"
+    "DESCRIPTION": "每 guardianmod:镶嵌 一颗 guardianmod:宝石 造成 !D! 点伤害。"
   },
   "Guardian:PrismaticBarrier": {
     "NAME": "棱镜屏障",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 每 guardianmod:镶嵌 一颗 guardianmod:宝石 获得 !B! 点 格挡 。"
+    "DESCRIPTION": "每 guardianmod:镶嵌 一颗 guardianmod:宝石 获得 !B! 点 格挡 。"
   },
   "Guardian:TemporalStrike": {
     "NAME": "质朴打击",
@@ -295,15 +296,15 @@
   },
   "Guardian:EvasiveProtocol": {
     "NAME": "闪避协议",
-    "DESCRIPTION": "处于 guardianmod:防御模式 时拥有 !M! 点 敏捷 。 NL guardianmod:提防 10 。"
+    "DESCRIPTION": "处于 guardianmod:防御模式 时拥有 !M! 点 敏捷 。 NL 在你的回合结束时， guardianmod:提防 3。"
   },
   "Guardian:SpikerProtocol": {
     "NAME": "荆棘协议",
-    "DESCRIPTION": "处于 guardianmod:防御模式 时拥有 !M! 层 荆棘 。 NL guardianmod:提防 10 。"
+    "DESCRIPTION": "处于 guardianmod:防御模式 时拥有 !M! 层 荆棘 。 NL 在你的回合结束时， guardianmod:提防 3。"
   },
   "Guardian:ArmoredProtocol": {
     "NAME": "装甲协议",
-    "DESCRIPTION": "处于 guardianmod:防御模式 每回合结束时获得 !M! 点 格挡 。 NL guardianmod:提防 10 。"
+    "DESCRIPTION": "处于 guardianmod:防御模式 每回合结束时获得 !M! 点 格挡 。 NL 在你的回合结束时， guardianmod:提防 3。"
   },
   "Guardian:TimeSifter": {
     "NAME": "时间沙漏",
@@ -368,7 +369,7 @@
   },
   "Guardian:RevengeProtocol": {
     "NAME": "复仇协议",
-    "DESCRIPTION": "处于 guardianmod:防御模式 时，拥有 !M! 点 力量 。 NL guardianmod:提防 10。"
+    "DESCRIPTION": "处于 guardianmod:防御模式 时，拥有 !M! 点 力量 。 NL 在你的回合结束时， guardianmod:提防 5。"
   },
   "Guardian:GatlingBeam": {
     "NAME": "炮塔射线",

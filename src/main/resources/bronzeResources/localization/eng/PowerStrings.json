@@ -93,9 +93,9 @@
   "bronze:Hardcode": {
     "NAME": "Hardcoding",
     "DESCRIPTIONS": [
-      "Next time you create a Function, it goes into your deck instead of your hand.",
+      "Next time you create a Function, it goes into your deck instead of your hand, removing all cards used.",
       "The next #b",
-      " times you create a Function, it goes into your deck instead of your hand."
+      " times you create a Function, it goes into your deck instead of your hand, removing all cards used."
     ]
   },
   "bronze:Verify": {
@@ -117,8 +117,8 @@
   "bronze:CleanCode": {
     "NAME": "Clean Code",
     "DESCRIPTIONS": [
-      "Remove all #yCompile *Error effects from cards in the Sequence. Lasts for #b1 more Function.",
-      "Remove all #yCompile *Error effects from cards in the Sequence. Lasts for #b",
+      "Remove all #yCompile Error effects from cards in the Sequence. Lasts for #b1 more Function.",
+      "Remove all #yCompile Error effects from cards in the Sequence. Lasts for #b",
       " Functions."
     ]
   },
@@ -134,6 +134,14 @@
     "NAME": "Full Release",
     "DESCRIPTIONS": [
       "At the start of your turn, NL "
+    ]
+  },
+  "bronze:RemoveNextError": {
+    "NAME": "Remove Errors",
+    "DESCRIPTIONS": [
+      "Remove the next #yCompile #yError #yEncoded.",
+      "Remove the next #b",
+      " #yCompile #yErrors #yEncoded."
     ]
   }
 }

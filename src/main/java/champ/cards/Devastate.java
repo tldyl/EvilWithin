@@ -20,11 +20,12 @@ public class Devastate extends AbstractChampCard {
 
         this.baseDamage = DAMAGE;
         tags.add(ChampMod.FINISHER);
+        postInit();
 
     }
 
     public void triggerOnCardPlayed(AbstractCard c) {
-        if (c.hasTag(ChampMod.FINISHER)) {
+        if (c.hasTag(ChampMod.FINISHER) && c!=this) {
             updateCost(-1);
         }
     }

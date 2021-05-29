@@ -24,16 +24,7 @@ public class CalledShot extends AbstractChampCard {
         tags.add(ChampMod.COMBO);
         tags.add(ChampMod.COMBODEFENSIVE);
         tags.add(ChampMod.COMBOBERSERKER);
-    }
-
-
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (AbstractDungeon.player.stance.ID.equals(UltimateStance.STANCE_ID) ||AbstractDungeon.player.stance.ID.equals(DefensiveStance.STANCE_ID) || AbstractDungeon.player.stance.ID.equals(BerserkerStance.STANCE_ID)) {
-            return super.canUse(p, m);
-        }
-        cantUseMessage = EXTENDED_DESCRIPTION[3];
-        return false;
+        postInit();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

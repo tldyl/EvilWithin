@@ -8,7 +8,7 @@
   },
   "expansioncontent:Hexaburn": {
     "NAME": "Hexaburn",
-    "DESCRIPTION": "expansioncontent:Boss - Hexaghost. NL In !M! turns, deal 6 damage to a random enemy 6 times."
+    "DESCRIPTION": "expansioncontent:Boss - Hexaghost. NL In !M! turns, deal !D! damage to a random enemy 6 times. NL Scales with Strength."
   },
   "expansioncontent:InvincibleStrength": {
     "NAME": "Invincible",
@@ -38,17 +38,18 @@
   },
   "expansioncontent:PolyBeam": {
     "NAME": "Donu Blast",
-    "DESCRIPTION": "expansioncontent:Boss - Ancients. NL Deal !D! damage twice. NL Next turn, add a *Deca *Shield into your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "expansioncontent:Boss - Ancients. NL Deal !D! damage twice. NL Next turn, add a *Deca *Shield+ into your hand. NL Exhaust."
+    "DESCRIPTION": "expansioncontent:Boss - Ancients. NL Deal !D! damage twice. Increase this card's damage by !M!. NL Next turn, add a *Deca *Shield into your hand, or expansioncontent:Exhume it. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "expansioncontent:Boss - Ancients. NL Deal !D! damage twice. Increase this card's damage by !M!. NL Next turn, add a *Deca *Shield+ into your hand, or expansioncontent:Exhume it. NL Exhaust."
   },
   "expansioncontent:DecaShield": {
     "NAME": "Deca Shield",
-    "DESCRIPTION": "Ethereal. NL expansioncontent:Boss - Ancients. NL Gain !B! Block. NL Next turn, add a *Donu *Blast with Ethereal into your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Ethereal. NL expansioncontent:Boss - Ancients. NL Gain !B! Block. NL Next turn, add a *Donu *Blast+ with Ethereal into your hand. NL Exhaust."
+    "DESCRIPTION": "expansioncontent:Boss - Ancients. NL Gain !B! Block twice. Increase this card's Block by !M!. NL Next turn, expansioncontent:Exhume *Donu *Blast. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "expansioncontent:Boss - Ancients. NL Gain !B! Block twice. Increase this card's Block by !M!. NL Next turn, expansioncontent:Exhume *Donu *Blast+. NL Exhaust."
   },
   "expansioncontent:PrepareCrush": {
     "NAME": "Prepare Crush",
-    "DESCRIPTION": "expansioncontent:Boss - Slime. NL Gain !B! Block. NL On your next turn, gain [E] [E] [E] and add SLIME CRUSH to your hand. NL Exhaust."
+    "DESCRIPTION": "expansioncontent:Boss - Slime. NL Gain !B! Block. NL On your next turn, gain [E] [E] [E] and add SLIME CRUSH to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "expansioncontent:Boss - Slime. NL Gain !B! Block. NL On your next turn, gain [E] [E] [E] and add SLIME CRUSH+ to your hand. NL Exhaust."
   },
   "expansioncontent:StudyTheSpire": {
     "NAME": "Study the Spire",

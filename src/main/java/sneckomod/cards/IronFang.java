@@ -3,6 +3,7 @@ package sneckomod.cards;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.BiteEffect;
@@ -16,10 +17,10 @@ public class IronFang extends AbstractSneckoCard {
     //stupid intellij stuff ATTACK, SELF_AND_ENEMY, COMMON
 
     private static final int DAMAGE = 7;
-    private static final int UPG_DAMAGE = 2;
+    private static final int UPG_DAMAGE = 4;
 
     private static final int BLOCK = 7;
-    private static final int UPG_BLOCK = 2;
+    private static final int UPG_BLOCK = 4;
 
     private static final int MAGIC = 3;
 
@@ -72,7 +73,7 @@ public class IronFang extends AbstractSneckoCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         atb(new VFXAction(new BiteEffect(m.hb.cX, m.hb.cY), 0.3F));// 117
-        atb(new NoApplyRandomDamageAction(m, silly, damage, 1, AbstractGameAction.AttackEffect.NONE, this));
+        atb(new NoApplyRandomDamageAction(m, silly, damage, 1, AbstractGameAction.AttackEffect.NONE, this, DamageInfo.DamageType.NORMAL));
         atb(new GainBlockAction(p, getRandomNum(magicNumber, block, this)));
     }
 

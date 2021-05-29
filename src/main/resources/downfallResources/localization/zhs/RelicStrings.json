@@ -4,7 +4,7 @@
     "FLAVOR": "放下你的怒火。像尖塔一样坚韧不屈。",
     "DESCRIPTIONS": [
       "替换初始遗物。拾起时，获得 #b100 最大生命，失去所有药水栏位且无法获得。每一阶段开始时获得 #b100 点最大生命。 NL 每回合开始时少抽 #b2 张牌并失去 ",
-	  " 。　NL 在战斗开始时获得特殊效果。"
+	  " 。 NL 在战斗开始时获得特殊效果。"
     ]
   },
   "downfall:NeowBlessing_Player": {
@@ -515,6 +515,24 @@
     "FLAVOR": "When it index oobs, you did it.",
     "DESCRIPTIONS": [
       "#pRight #pClick: Play the next card."
+    ]
+  },
+  "downfall:ExtraCursedBell": {
+    "NAME": "召唤铃铛",
+    "FLAVOR": "这个黑铁铃铛在你找到它时作响了3次，但现在它已经不再响了。",
+    "DESCRIPTIONS": [
+      "获得 #b2 个独特的 #r诅咒 和 #b3 件 #y遗物 。",
+      "铃铛再次鸣响……",
+      "跳过奖励",
+      "关闭"
+    ]
+  },
+  "downfall:ExtraCursedKey": {
+    "NAME": "诅咒钥匙",
+    "FLAVOR": "你能感到这把钥匙上散发出邪恶的能量。力量总是需要付出代价的。",
+    "DESCRIPTIONS": [
+      " 你每次打开一个非Boss宝箱，都会获得 #b2 张 #r诅咒 。",
+      "在每回合开始时获得 [E] 。"
     ]
   }
 }

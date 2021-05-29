@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -30,6 +31,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.stances.NeutralStance;
 
+import java.security.Signature;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,6 +51,8 @@ public abstract class AbstractChampCard extends CustomCard {
     public String UPGRADE_DESCRIPTION;
     public String[] EXTENDED_DESCRIPTION;
     public boolean reInitDescription = true;
+
+    public boolean techniqueLast = true;
 
 
     public AbstractChampCard(final String id, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
@@ -91,16 +95,24 @@ public abstract class AbstractChampCard extends CustomCard {
         return img;
     }
 
-    public static String makeID(String blah) {
-        return getModID() + ":" + blah;
+    public static String makeID(String name) {
+        return getModID() + ":" + name;
     }
 
     public static boolean bcombo() {
-        return (enteredBerserkerThisTurn || AbstractDungeon.player.stance.ID.equals(BerserkerStance.STANCE_ID) || (AbstractDungeon.player.stance.ID.equals(UltimateStance.STANCE_ID)));
+        return (enteredBerserkerThisTurn || AbstractDungeon.player.stance.ID.equals(BerserkerStance.STANCE_ID) || AbstractDungeon.player.stance.ID.equals(UltimateStance.STANCE_ID));
     }
 
     public static boolean dcombo() {
-        return (enteredDefensiveThisTurn || AbstractDungeon.player.stance.ID.equals(DefensiveStance.STANCE_ID) || (AbstractDungeon.player.stance.ID.equals(UltimateStance.STANCE_ID)));
+        return (enteredDefensiveThisTurn || AbstractDungeon.player.stance.ID.equals(DefensiveStance.STANCE_ID) || AbstractDungeon.player.stance.ID.equals(UltimateStance.STANCE_ID));
+    }
+
+    public static boolean inBerserker() {
+        return AbstractDungeon.player.stance.ID.equals(BerserkerStance.STANCE_ID) || AbstractDungeon.player.stance.ID.equals(UltimateStance.STANCE_ID);
+    }
+
+    public static boolean inDefensive() {
+        return AbstractDungeon.player.stance.ID.equals(DefensiveStance.STANCE_ID) || AbstractDungeon.player.stance.ID.equals(UltimateStance.STANCE_ID);
     }
 
     public void displayUpgrades() {
@@ -195,7 +207,7 @@ public abstract class AbstractChampCard extends CustomCard {
     public ArrayList<AbstractMonster> monsterList() {
         ArrayList<AbstractMonster> q = new ArrayList<>();
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-            if (!m.isDying && !m.isDead) q.add(m);
+            if (!m.isDeadOrEscaped()) q.add(m);
         }
         return q;
     }
@@ -307,6 +319,10 @@ public abstract class AbstractChampCard extends CustomCard {
         ChampTextHelper.colorCombos(this, true);
     }
 
+    public void postInit(){
+        if (baseDamage > 0) techniqueLast = true;
+    }
+
     @Override
     public void initializeDescription() {
         ChampTextHelper.calculateTagText(this);
@@ -321,4 +337,25 @@ public abstract class AbstractChampCard extends CustomCard {
         }
         super.update();
     }
+
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        boolean bottled = false;
+        if (hasTag(FINISHER)) {
+            if (p.hasRelic(SignatureFinisher.ID)){
+                if ((((SignatureFinisher)p.getRelic(SignatureFinisher.ID)).card.uuid == this.uuid)){
+                    bottled = true;
+                };
+            }
+            if (!bottled) {
+                if ((AbstractDungeon.player.stance instanceof NeutralStance)) {
+                    this.cantUseMessage = ChampChar.characterStrings.TEXT[61];
+                    return false;
+                }
+            }
+        }
+        return super.canUse(p, m);
+    }
+
 }

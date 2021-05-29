@@ -19,6 +19,7 @@ public class Endure extends AbstractChampCard {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF);
         baseBlock = block = MAGIC;
         tags.add(ChampMod.TECHNIQUE);
+        postInit();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -32,20 +33,12 @@ public class Endure extends AbstractChampCard {
         if (AbstractDungeon.player.hasPower(StrengthPower.POWER_ID)) {
             baseBlock += AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount;
         }
+        if (!upgraded && AbstractDungeon.player.hasPower(DexterityPower.POWER_ID)) {
+            baseBlock -= AbstractDungeon.player.getPower(DexterityPower.POWER_ID).amount;
+        }
         super.applyPowersToBlock();
         baseBlock = realBaseBlock;
         isBlockModified = block != baseBlock;
-    }
-
-    public void calculateCardDamage(AbstractMonster mo)
-    {
-        int olddamage = this.baseDamage;
-        if (AbstractDungeon.player.hasPower("Dexterity")) {
-            this.baseDamage += AbstractDungeon.player.getPower("Dexterity").amount * this.magicNumber;
-        }
-        super.calculateCardDamage(mo);
-        this.baseDamage = olddamage;
-        this.isDamageModified = (this.baseDamage != this.damage);
     }
 
     public void upp() {

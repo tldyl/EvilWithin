@@ -16,7 +16,8 @@
   "downfall:NeowInvulnerable": {
     "NAME": "God of Life",
     "DESCRIPTIONS": [
-      "Heals #b2 HP whenever you play a card."
+      "Heals #b",
+      " HP whenever you play a card."
     ]
   },
   "downfall:TransformDrawnCardsPower": {
@@ -54,13 +55,13 @@
   "downfall:WatcherAngryPower": {
     "NAME": "Unbridled Rage",
     "DESCRIPTIONS": [
-      "When Watcher is reduced to #b50% HP, she IMMEDIATELY enters Wrath permanently. NL Watcher's Wrath increases damage dealt and received by #b50% instead of #b100%."
+      "At the end of the round, if Watcher is at or below #b50% HP, she enters Wrath. NL Watcher's Wrath increases damage dealt and received by #b50% instead of #b100%."
     ]
   },
   "downfall:NeowUnbridledRage": {
     "NAME": "Unbridled Rage",
     "DESCRIPTIONS": [
-      "While Neow is below #b50% Max HP, she gains #b6 #yStrength."
+      "At the end of the round, if Neow is at or below #b50% HP, she gains #b6 #yStrength. NL Can only trigger once per combat."
     ]
   },
   "downfall:WatcherCripplePower": {
@@ -74,15 +75,15 @@
   "downfall:NeowBlasphemersDemise": {
     "NAME": "Blasphemers Demise",
     "DESCRIPTIONS": [
-      "When Neow loses #b",
-      " more HP, she will be stopped from gaining #b10 #yStrength the next turn she uses a Buff.",
+      "Unless Neow loses #b",
+      " more HP, the next time she uses a Buff, she will gain #b10 additional #yStrength.",
       "Neow is crippled and will not gain additional #yStrength during her next Buff turn."
     ]
   },
   "downfall:WatcherDivinityPower": {
     "NAME": "Fleeting Faith",
     "DESCRIPTIONS": [
-      "Watcher gains #b1 Mantra whenever you play a card. NL Watcher loses #b5 Mantra at the start of her turn. NL Watcher's Divinity Stance is permanent."
+      "Watcher gains #b1 Mantra whenever you play a card. NL Watcher loses #b5 Mantra at the start of her turn. NL Watcher does not exit Divinity Stance at the end of her turn."
     ]
   },
   "downfall:NeowFleetingFaith": {
@@ -94,19 +95,19 @@
   "downfall:SilentShivTimeEaterPower": {
     "NAME": "Bag of Knives",
     "DESCRIPTIONS": [
-      "Whenever you play a #b0 cost card, if Silent has less than #b7 cards in hand, she gains a #yShiv."
+      "The first time you play a #b0 cost card each turn, Silent gains a #yShiv."
       ]
   },
   "downfall:NeowBagOfKnives": {
     "NAME": "Bag of Knives",
     "DESCRIPTIONS": [
-      "Whenever you play a #b0 cost card, take #b4 damage."
+      "The first two times you play a #b0 cost card each turn, take #b4 damage."
     ]
   },
   "downfall:SilentMirrorImagePower": {
     "NAME": "Seeing Double",
     "DESCRIPTIONS": [
-      "At the start of each turn, a mirror image of Silent will hide her real location. Attacking the mirror removes it from combat for the turn."
+      "At the start of each turn, a mirror image of Silent will hide her real location. Attacking Silent or the mirror removes it from combat for the turn."
     ]
   },
   "downfall:NeowSeeingDouble": {
@@ -148,7 +149,7 @@
   "downfall:NeowAncientConstruct": {
     "NAME": "Ancient Construct",
     "DESCRIPTIONS": [
-      "Neow gains #b2 #yArtifact at the start of your turn if she has no #yArtifact."
+      "Neow gains #b2 #yArtifact at the end of her turn if she has no #yArtifact."
     ]
   },
   "downfall:DefectCuriosity": {
@@ -191,7 +192,8 @@
   "downfall:IroncladFortificationPower": {
     "NAME": "Bastion",
     "DESCRIPTIONS": [
-      "Ironclad begins the fight with a Fortification, which will grant him #b15 Block each turn. NL When the Fortification has been destroyed, Ironclad loses Barricade, but gains #b5 Strength per turn."
+      "Ironclad begins the fight with a Fortification, which will grant him #b",
+      " Block each turn. NL When the Fortification has been destroyed, Ironclad loses Barricade, but gains #b5 Strength per turn."
     ]
   },
   "downfall:NeowBastion": {
@@ -216,6 +218,26 @@
     "NAME": "???",
     "DESCRIPTIONS": [
       "Your next #yAttack used against Neow deals #b0 damage this turn."
+    ]
+  },
+  "downfall:CrowbotRitualPower": {
+    "NAME": "Reprogram:Ritual",
+    "DESCRIPTIONS": [
+      "When #yCrowBot is at or below #b50% HP,it lose #b3 HP and gain #b",
+      " #yStrength at the end of its turn."
+    ]
+  },
+  "downfall:DamageMultiplier": {
+    "NAME": "Damage Multiplier",
+    "DESCRIPTIONS": [
+      "#yAttacks deal #b",
+      " times damage."
+    ]
+  },
+  "downfall:CompressionMold": {
+    "NAME": "Compression Mold",
+    "DESCRIPTIONS": [
+      "#yFired Ammo is upgraded afterwards."
     ]
   }
 }

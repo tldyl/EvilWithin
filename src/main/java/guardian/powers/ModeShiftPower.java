@@ -1,6 +1,7 @@
 package guardian.powers;
 
 
+import champ.relics.DeflectingBracers;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
@@ -10,6 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.BlurPower;
 import com.megacrit.cardcrawl.powers.BufferPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import guardian.relics.ModeShifter;
 import guardian.stances.DefensiveMode;
 
 
@@ -17,6 +19,7 @@ public class ModeShiftPower extends AbstractGuardianPower {
     public static final String POWER_ID = "Guardian:ModeShiftPower";
     private static final int STARTINGAMOUNT = 20;
     private static final int AMOUNTGAINPERACTIVATION = 10;
+    private static final int MAXAMOUNT = 50;
     private static final int BLOCKONTRIGGER = 10;
     public static PowerType POWER_TYPE = PowerType.BUFF;
     public static String[] DESCRIPTIONS;
@@ -56,11 +59,16 @@ public class ModeShiftPower extends AbstractGuardianPower {
             AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(DefensiveMode.STANCE_ID));
 
             int turns;
-            if (AbstractDungeon.actionManager.turnHasEnded) turns = 2;
-            else turns = 1;
+            if (AbstractDungeon.actionManager.turnHasEnded)
+                turns = 2;
+            else
+                turns = 1;
+            if (AbstractDungeon.player.hasRelic(ModeShifter.ID) && activations == 0)
+                turns += 1;
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DontLeaveDefensiveModePower(AbstractDungeon.player, turns), turns));
+
             this.activations++;
-            this.amount += STARTINGAMOUNT + (AMOUNTGAINPERACTIVATION * activations);
+            this.amount += Math.min(STARTINGAMOUNT + (AMOUNTGAINPERACTIVATION * activations), MAXAMOUNT); //Set max of 40 Brace
             updateDescription();
             if (this.amount <= 0){
                 onSpecificTrigger(0);
@@ -72,7 +80,7 @@ public class ModeShiftPower extends AbstractGuardianPower {
     @Override
     public int onLoseHp(int damageAmount) {
 
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && this.active && !AbstractDungeon.player.hasPower(ConstructModePower.POWER_ID) && !AbstractDungeon.player.hasPower(BufferPower.POWER_ID)) {
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && this.active && !AbstractDungeon.player.hasPower(BufferPower.POWER_ID)) {
             onSpecificTrigger(damageAmount);
         }
 

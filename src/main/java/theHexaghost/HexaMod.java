@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.events.beyond.Falling;
 import com.megacrit.cardcrawl.events.city.BackToBasics;
 import com.megacrit.cardcrawl.events.city.Ghosts;
@@ -28,6 +29,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.scenes.TheBottomScene;
 import com.megacrit.cardcrawl.vfx.scene.InteractableTorchEffect;
 import downfall.downfallMod;
+import downfall.patches.BanSharedContentPatch;
 import downfall.util.CardIgnore;
 import javassist.CtClass;
 import javassist.Modifier;
@@ -37,6 +39,7 @@ import theHexaghost.cards.*;
 import theHexaghost.events.*;
 import theHexaghost.ghostflames.AbstractGhostflame;
 import theHexaghost.ghostflames.BolsteringGhostflame;
+import theHexaghost.patches.ExhaustCardTickPatch;
 import theHexaghost.potions.DoubleChargePotion;
 import theHexaghost.potions.EctoCoolerPotion;
 import theHexaghost.potions.InfernoChargePotion;
@@ -239,6 +242,7 @@ public class HexaMod implements
         BaseMod.addPotion(SoulburnPotion.class, Color.GRAY, Color.GRAY, Color.BLACK, SoulburnPotion.POTION_ID);
         BaseMod.addPotion(DoubleChargePotion.class, Color.BLUE, Color.PURPLE, Color.MAROON, DoubleChargePotion.POTION_ID, TheHexaghost.Enums.THE_SPIRIT);
         BaseMod.addPotion(InfernoChargePotion.class, Color.PURPLE, Color.PURPLE, Color.MAROON, InfernoChargePotion.POTION_ID, TheHexaghost.Enums.THE_SPIRIT);
+        BanSharedContentPatch.registerRunLockedPotion(TheHexaghost.Enums.THE_SPIRIT, SoulburnPotion.POTION_ID);
 
         if (Loader.isModLoaded("widepotions")) {
             WidePotionsMod.whitelistSimplePotion(EctoCoolerPotion.POTION_ID);
@@ -274,7 +278,7 @@ public class HexaMod implements
 
                 ApocalypticArmor.ID,
                 ApocalypseNow.ID,
-                UnlimitedPower.ID,
+                FlameSwitch.ID,
 
                 RecyclingMachine.ID,
                 SoulOfChaos.ID,
@@ -292,6 +296,8 @@ public class HexaMod implements
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
         renderFlames = false;
+        ExhaustCardTickPatch.exhaustedLastTurn = false;
+        ExhaustCardTickPatch.exhaustedThisTurn = false;
     }
 
     public static void renderGhostflames(SpriteBatch sb) {
@@ -397,8 +403,8 @@ public class HexaMod implements
 
         BaseMod.addEvent(new AddEventParams.Builder(WanderingSpecter.ID, WanderingSpecter.class) //Event ID//
                 //Extra Requirement
-                .bonusCondition(HexaMod::canGetCurseRelic)
                 //Only in Evil if content sharing is disabled
+                .dungeonID(Exordium.ID)
                 .spawnCondition(() -> (evilMode || downfallMod.contentSharing_events))
                 .bonusCondition(() -> (AbstractDungeon.cardRandomRng.random(0, 2) == 2))
                 .create());
@@ -436,19 +442,5 @@ public class HexaMod implements
                 .create());
     }
 
-    public static boolean canGetCurseRelic() {
-        ArrayList<String> possRelicsList = new ArrayList<>();
-        possRelicsList.add(BlueCandle.ID);
-        possRelicsList.add(DarkstonePeriapt.ID);
-        possRelicsList.add(DuVuDoll.ID);
-        possRelicsList.add(CursedKey.ID);
-        possRelicsList.add(CallingBell.ID);
-        possRelicsList.add(Omamori.ID);
 
-        for (AbstractRelic q : AbstractDungeon.player.relics) {
-            possRelicsList.removeIf(q.relicId::equals);
-        }
-
-        return !possRelicsList.isEmpty();
-    }
 }

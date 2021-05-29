@@ -106,10 +106,10 @@
   "hexamod:GiftsFromTheDeadPower": {
     "NAME": "馈赠抽牌",
     "DESCRIPTIONS": [
-      "每当一张 #y虚无 牌被 #y消耗 时，下一回合抽 ",
-      " 张牌",
-	  " 张牌",
-      "。"
+      "你的回合开始时， #y取回 随机 #b",
+      " 阴世",
+	  " 牌。",
+      " 牌。"
     ]
   },
   "hexamod:GiftsFromTheDeadPowerPlus": {
@@ -145,7 +145,7 @@
   "hexamod:ParanormalFormPower": {
     "NAME": "超常形态",
     "DESCRIPTIONS": [
-      "本回合每当你打出 #y虚无 牌时，对随机一名敌人造成 #b",
+      "本回合每当你打出 #y阴世 牌时，对随机一名敌人造成 #b",
       " 点伤害。"
     ]
   },

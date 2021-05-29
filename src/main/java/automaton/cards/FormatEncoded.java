@@ -19,8 +19,8 @@ public class FormatEncoded extends AbstractBronzeCard {
 
     //stupid intellij stuff attack, all, rare
 
-    private static final int DAMAGE = 6;
-    private static final int BLOCK = 6;
+    private static final int DAMAGE = 5;
+    private static final int BLOCK = 5;
 
     public FormatEncoded() {
         super(ID, 1, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY, CardColor.COLORLESS);
@@ -43,12 +43,12 @@ public class FormatEncoded extends AbstractBronzeCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GainBlockAction(p, block));
         if (m != null)
-            atb(new TimedVFXAction(new VfxBuilder(TextureLoader.getTexture("bronzeResources/images/ui/block.png"), m.hb.x - (50 * Settings.scale), m.hb.cY, 0.25F)
+            atb(new TimedVFXAction(new VfxBuilder(TextureLoader.getTexture("bronzeResources/images/ui/block.png"), m.hb.x - (50 * Settings.scale), m.hb.cY, 0.1F)
                     .setColor(getRandomColor())
                     .fadeIn(0.1F)
                     .rotate(300f)
                     .moveX(m.hb.x - (50 * Settings.scale), m.hb.x - (150 * Settings.scale))
-                    .andThen(0.2f)
+                    .andThen(0.1f)
                     .moveX(m.hb.x - (150 * Settings.scale), m.hb.cX)
                     .build())
             );

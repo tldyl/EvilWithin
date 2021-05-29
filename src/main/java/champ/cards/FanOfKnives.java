@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.DaggerSprayEffect;
 
 public class FanOfKnives extends AbstractChampCard {
 
@@ -17,9 +16,7 @@ public class FanOfKnives extends AbstractChampCard {
     //stupid intellij stuff attack, enemy, common
 
     private static final int DAMAGE = 5;
-    private static final int UPG_DAMAGE = 2;
-
-    private boolean found;
+    private static final int UPG_DAMAGE = 3;
 
     public FanOfKnives() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ALL_ENEMY);
@@ -29,6 +26,7 @@ public class FanOfKnives extends AbstractChampCard {
         tags.add(ChampMod.OPENERBERSERKER);
         tags.add(ChampMod.COMBO);
         tags.add(ChampMod.COMBOBERSERKER);
+        postInit();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -38,14 +36,13 @@ public class FanOfKnives extends AbstractChampCard {
         if (bcombo()) {
             atb(new VFXAction(new DaggerSprayAnyColorEffect(AbstractDungeon.getMonsters().shouldFlipVfx(), Color.RED), 0.0F));
             allDmg(AbstractGameAction.AttackEffect.NONE);
-            if (upgraded) {
-
-                atb(new VFXAction(new DaggerSprayAnyColorEffect(AbstractDungeon.getMonsters().shouldFlipVfx(), Color.SCARLET), 0.0F));
-                allDmg(AbstractGameAction.AttackEffect.NONE);
-            }
+//            if (upgraded) {
+//                atb(new VFXAction(new DaggerSprayAnyColorEffect(AbstractDungeon.getMonsters().shouldFlipVfx(), Color.SCARLET), 0.0F));
+//                allDmg(AbstractGameAction.AttackEffect.NONE);
+//            }
         }
-        berserkOpen();
 
+        berserkOpen();
     }
 
     @Override
@@ -54,8 +51,6 @@ public class FanOfKnives extends AbstractChampCard {
     }
 
     public void upp() {
-        // upgradeDamage(UPG_DAMAGE);
-        rawDescription = UPGRADE_DESCRIPTION;
-        initializeDescription();
+        upgradeDamage(UPG_DAMAGE);
     }
 }
